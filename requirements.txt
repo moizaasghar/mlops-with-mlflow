@@ -1,0 +1,13 @@
+mlflow
+scikit-learn
+pydantic
+fastapi
+uvicorn
+streamlit
+requests
+datasets
+transformers  
+evaluate
+scikit-learn 
+accelerate
+gradio
