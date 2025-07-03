@@ -4,8 +4,10 @@ Loads a pre-trained sentiment model and provides a `/predict` route
 that accepts raw text and returns the predicted sentiment label.
 """
 
+from ast import List
 from fastapi import FastAPI
 from pydantic import BaseModel
+from pyparsing import Optional
 from model import SentimentModelLoader
 import uvicorn
 
@@ -21,7 +23,6 @@ app = FastAPI(
 
 # Instantiate and load the sentiment model once at startup
 model_loader = SentimentModelLoader()
-model_loader.load_model()
 
 # -----------------------------------------------------------------------------
 # 2. Request and Response Schemas
@@ -51,6 +52,7 @@ class PredictionResponse(BaseModel):
     summary="Predict sentiment",
     response_description="The sentiment label for the provided text"
 )
+
 def predict(request: PredictionRequest) -> PredictionResponse:
     """
     Handle POST requests to /predict.
