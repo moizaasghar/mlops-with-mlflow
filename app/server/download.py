@@ -16,10 +16,10 @@ import mlflow.artifacts
 mlflow.set_tracking_uri("http://127.0.0.1:8080/")
 
 # Use the Artifacts API to download all files associated with the specified model.
-# - artifact_uri: the model registry URI in the form "models:/<ModelName>/<StageOrVersion>".
+# - artifact_uri: the model registry URI in the form "models:/<ModelName>@<Aliases>".
 # - dst_path:    the local filesystem directory where artifacts will be saved.
 local_model_dir = mlflow.artifacts.download_artifacts(
-    artifact_uri="models:/SentimentClassifier@bad",
+    artifact_uri="models:/SentimentClassifier@production",
     dst_path="./app/server/model"
 )
 
