@@ -1,1 +1,11 @@
 venv
+mlruns
+mlartifacts
+data
+artifacts
+
+app/server/model
+
+app/__pycache__
+
+app/server/__pycache__
